@@ -11,5 +11,5 @@ export ORG_GRADLE_PROJECT_dbPwdOerebV2="gretl"
 ```
 
 ```
-./start-gretl.sh --docker-image sogis/gretl:latest --docker-network oereb-gretljobs_default --job-directory $PWD tasks --all
+./start-gretl.sh --docker-image sogis/gretl:latest --docker-network oereb_gretljobs_default --job-directory $PWD/oereb_av replaceCadastralSurveyingData
 ```
