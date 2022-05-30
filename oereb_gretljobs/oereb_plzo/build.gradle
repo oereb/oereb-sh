@@ -60,5 +60,5 @@ task importPLZO() {
         tasks.findAll { task -> task.name.startsWith('importPLZO_') }
     }  
 
-    mustRunAfter ":oereb_av:replaceCadastralSurveyingData"  
+    //mustRunAfter ":oereb_av:replaceCadastralSurveyingData"  
 }

@@ -17,7 +17,7 @@
   <DATASECTION>
     <OeREBKRMkvs_V2_0.Konfiguration BID="ch.sh.agi.konfiguration.oereb.verfuegbarkeit">
       <OeREBKRMkvs_V2_0.Konfiguration.GemeindeMitOeREBK TID="499">
-        <Gemeinde>2457</Gemeinde>
+        <Gemeinde>2939</Gemeinde>
         <Themen>
           <OeREBKRM_V2_0.ThemaRef>
             <Thema>ch.Sicherheitszonenplan</Thema>
@@ -39,6 +39,9 @@
           </OeREBKRM_V2_0.ThemaRef>
           <OeREBKRM_V2_0.ThemaRef>
             <Thema>ch.BaulinienFlughafenanlagen</Thema>
+          </OeREBKRM_V2_0.ThemaRef>
+          <OeREBKRM_V2_0.ThemaRef>
+            <Thema>ch.BelasteteStandorte</Thema>
           </OeREBKRM_V2_0.ThemaRef>
           <OeREBKRM_V2_0.ThemaRef>
             <Thema>ch.BelasteteStandorteZivileFlugplaetze</Thema>

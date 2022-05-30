@@ -41,6 +41,34 @@
         <PLZ>8200</PLZ>
         <Ort>Schaffhausen</Ort>
       </OeREBKRM_V2_0.Amt.Amt>
+
+      <OeREBKRM_V2_0.Amt.Amt TID="ch.sh.sk">
+        <Name>
+          <LocalisationCH_V1.MultilingualText>
+            <LocalisedText>
+              <LocalisationCH_V1.LocalisedText>
+                <Language>de</Language>
+                <Text>Staatskanzlei</Text>
+              </LocalisationCH_V1.LocalisedText>
+            </LocalisedText>
+          </LocalisationCH_V1.MultilingualText>
+        </Name>
+        <AmtImWeb>
+          <OeREBKRM_V2_0.MultilingualUri>
+            <LocalisedText>
+              <OeREBKRM_V2_0.LocalisedUri>
+                <Language>de</Language>
+                <Text>https://sh.ch/CMS/Webseite/Kanton-Schaffhausen/Beh-rde/Regierung/Staatskanzlei-2758-DE.html</Text>
+              </OeREBKRM_V2_0.LocalisedUri>
+            </LocalisedText>
+          </OeREBKRM_V2_0.MultilingualUri>
+        </AmtImWeb>
+        <Strasse>Beckenstube</Strasse>
+        <Hausnr>7</Hausnr>
+        <PLZ>8200</PLZ>
+        <Ort>Schaffhausen</Ort>
+      </OeREBKRM_V2_0.Amt.Amt>
+
     </OeREBKRM_V2_0.Amt>
   </DATASECTION>
 </TRANSFER>
