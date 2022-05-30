@@ -14,7 +14,8 @@ def pathToUnzipFolder = Paths.get(pathToTempFolder, "unzip_data")
 def iliModelAmtlicheVermessung = "DM01AVCH24LV95D"
 
 def cadastralSurveyingBaseUrl = "https://data.geo.admin.ch/ch.swisstopo-vd.amtliche-vermessung/DM01AVCH24D/ITF/SH/"
-def cadastralSurveyingDataSets = ["2901","2903","2904","2914","2915","2917","2919","2920","2931","2932","2933","2936","2937","2938","2939","2951","2952","2953","2961","2962","2963","2964","2971","2972","2973","2974"]
+//def cadastralSurveyingDataSets = ["2901","2903","2904","2914","2915","2917","2919","2920","2931","2932","2933","2936","2937","2938","2939","2951","2952","2953","2961","2962","2963","2964","2971","2972","2973","2974"]
+def cadastralSurveyingDataSets = ["2939"]
 
 cadastralSurveyingDataSets.each { cadastralSurveyingDataSet ->
     def dataSet = cadastralSurveyingDataSet.toString()

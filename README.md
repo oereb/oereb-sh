@@ -53,10 +53,10 @@ export ORG_GRADLE_PROJECT_dbPwdOerebV2="gretl"
 
 - `./start-gretl.sh --docker-image sogis/gretl:latest --docker-network oereb_gretljobs_default --job-directory $PWD/oereb_av replaceCadastralSurveyingData`
 - `./start-gretl.sh --docker-image sogis/gretl:latest --docker-network oereb_gretljobs_default --job-directory $PWD/oereb_plzo importPLZO`
-
 - `./start-gretl.sh --docker-image sogis/gretl:latest --docker-network oereb_gretljobs_default --job-directory $PWD/oereb_bundesgesetze importData`
 - `./start-gretl.sh --docker-image sogis/gretl:latest --docker-network oereb_gretljobs_default --job-directory $PWD/oereb_bundeskonfiguration importBundeskonfiguration`
+- `./start-gretl.sh --docker-image sogis/gretl:latest --docker-network oereb_gretljobs_default --job-directory $PWD/oereb_kantonskonfiguration importKantonskonfiguration`
+- `./start-gretl.sh --docker-image sogis/gretl:latest --docker-network oereb_gretljobs_default --job-directory $PWD/oereb_bundesdaten importData`
+- `./start-gretl.sh --docker-image sogis/gretl:latest --docker-network oereb_gretljobs_default --job-directory $PWD/oereb_kbs importData`
 
-```
-./start-gretl.sh --docker-image sogis/gretl:latest --docker-network oereb_gretljobs_default --job-directory $PWD/oereb_av replaceCadastralSurveyingData
-```
+- Alles: `./start-gretl.sh --docker-image sogis/gretl:latest --docker-network oereb_gretljobs_default --job-directory $PWD :oereb_av:replaceCadastralSurveyingData :oereb_plzo:importPLZO :oereb_bundesgesetze:importData :oereb_bundeskonfiguration:importBundeskonfiguration :oereb_kantonskonfiguration:importKantonskonfiguration :oereb_bundesdaten:importData :oereb_kbs:importData`

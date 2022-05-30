@@ -1,0 +1,65 @@
+import ch.so.agi.gretl.api.TransferSet
+import ch.so.agi.gretl.tasks.*
+import java.nio.file.Paths
+import de.undercouch.gradle.tasks.download.Download
+
+apply plugin: "de.undercouch.download"
+apply plugin: "ch.so.agi.gretl"
+
+def GROUP = "KbS-Import"
+
+//def dbSchemas = ["stage", "live"]
+def dbSchemas = ["live"]
+
+def pathToTempFolder = System.getProperty("java.io.tmpdir")
+def pathToUnzipFolder = Paths.get(pathToTempFolder, "unzip_data")
+
+def iliModelTransferstruktur = "OeREBKRMtrsfr_V2_0"
+def baseUrl = "https://raw.githubusercontent.com/oereb/oereb-sh/main/oereb_kantonale_daten/"
+
+def oerebThemen = [
+    "ch.BelasteteStandorte_v2_0"
+]
+
+defaultTasks "importData"
+
+oerebThemen.each { oerebThema ->
+    def themaName = oerebThema.toString()
+
+    task "download_$themaName"(type: Download) {
+        group = GROUP
+        description = "Download KbS-Daten"
+        src baseUrl + themaName + ".xtf"
+        dest pathToTempFolder
+        overwrite true
+    }
+
+    dbSchemas.eachWithIndex { dbSchema, i ->
+        def schema = dbSchema.toString()
+        def taskIndex = i.toString()
+    
+        task "import_$themaName$schema"(type: Ili2pgReplace, dependsOn: "download_$themaName") {
+            group = GROUP
+            description = "Import KbS in DB schema $schema"
+            database = [dbUriOerebV2, dbUserOerebV2, dbPwdOerebV2]
+            dbschema = schema
+            dataset = themaName
+            //importBid = true
+            importTid = true
+            models = iliModelTransferstruktur
+            dataFile = file(Paths.get(pathToTempFolder.toString(), themaName + ".xtf"))
+            disableValidation = false
+        }
+    }
+}
+
+task importData() {
+    group = GROUP
+    description = "Aggregationstask für Import KbS."
+
+    dependsOn {
+        tasks.findAll { task -> task.name.startsWith('import_') }
+    }    
+    
+    //mustRunAfter ":oereb_kantonskonfiguration:importKantonskonfiguration" 
+}
