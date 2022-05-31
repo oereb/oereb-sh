@@ -18,7 +18,7 @@ services:
       DBURL: jdbc:postgresql://oereb-db:5432/oereb
       DBUSR: dmluser
       DBPWD: dmluser
-      TMPDIR: /tmp/
+      TMPDIR: /work
       DBSCHEMA: live
       MININTERSECTION: "0.1"
       CADASTRE_AUTHORITY_URL: https://agi.sh.ch
