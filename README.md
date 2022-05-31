@@ -60,3 +60,5 @@ export ORG_GRADLE_PROJECT_dbPwdOerebV2="gretl"
 - `./start-gretl.sh --docker-image sogis/gretl:latest --docker-network oereb_gretljobs_default --job-directory $PWD/oereb_kbs importData`
 
 - Alles: `./start-gretl.sh --docker-image sogis/gretl:latest --docker-network oereb_gretljobs_default --job-directory $PWD :oereb_av:replaceCadastralSurveyingData :oereb_plzo:importPLZO :oereb_bundesgesetze:importData :oereb_bundeskonfiguration:importBundeskonfiguration :oereb_kantonskonfiguration:importKantonskonfiguration :oereb_bundesdaten:importData :oereb_kbs:importData`
+
+- Alles mit oereb_stack: `./start-gretl.sh --docker-image sogis/gretl:latest --docker-network oereb_stack_default --job-directory $PWD :oereb_av:replaceCadastralSurveyingData :oereb_plzo:importPLZO :oereb_bundesgesetze:importData :oereb_bundeskonfiguration:importBundeskonfiguration :oereb_kantonskonfiguration:importKantonskonfiguration :oereb_bundesdaten:importData :oereb_kbs:importData`

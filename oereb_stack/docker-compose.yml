@@ -1,0 +1,30 @@
+version: '3'
+services:
+  oereb-db:
+    image: ghcr.io/oereb/oereb-db:2
+    environment:
+      POSTGRES_DB: oereb
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_HOST_AUTH_METHOD: md5
+      PG_WRITE_PWD: ddluser
+      PG_READ_PWD: dmluser
+      PG_GRETL_PWD: gretl
+    ports:
+      - "54323:5432"
+  webservice:
+    image: sogis/oereb-web-service:2
+    environment:
+      TZ: Europe/Zurich
+      DBURL: jdbc:postgresql://oereb-db:5432/oereb
+      DBUSR: dmluser
+      DBPWD: dmluser
+      TMPDIR: /tmp/
+      DBSCHEMA: live
+      MININTERSECTION: "0.1"
+      CADASTRE_AUTHORITY_URL: https://agi.sh.ch
+      PLAN_FOR_LANDREGISTER: https://geodienste.ch/db/av_situationsplan_oereb_0/deu?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&FORMAT=image%2Fpng&TRANSPARENT=true&LAYERS=av_situationsplan_oereb&STYLES=&SRS=EPSG%3A2056&CRS=EPSG%3A2056&TILED=false&DPI=96&OPACITIES=255&t=675&WIDTH=1920&HEIGHT=710&BBOX=2607051.2375,1228517.0374999999,2608067.2375,1228892.7458333333
+      PLAN_FOR_LANDREGISTER_MAIN_PAGE: https://geodienste.ch/db/av_situationsplan_0/deu??SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&FORMAT=image%2Fpng&TRANSPARENT=true&LAYERS=av_situationsplan&STYLES=&SRS=EPSG%3A2056&CRS=EPSG%3A2056&TILED=false&DPI=96&OPACITIES=255&t=675&WIDTH=1920&HEIGHT=710&BBOX=2607051.2375,1228517.0374999999,2608067.2375,1228892.7458333333
+    ports:
+      - 8080:8080
+    depends_on:
+      - oereb-db
