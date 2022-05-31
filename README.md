@@ -62,3 +62,16 @@ export ORG_GRADLE_PROJECT_dbPwdOerebV2="gretl"
 - Alles: `./start-gretl.sh --docker-image sogis/gretl:latest --docker-network oereb_gretljobs_default --job-directory $PWD :oereb_av:replaceCadastralSurveyingData :oereb_plzo:importPLZO :oereb_bundesgesetze:importData :oereb_bundeskonfiguration:importBundeskonfiguration :oereb_kantonskonfiguration:importKantonskonfiguration :oereb_bundesdaten:importData :oereb_kbs:importData`
 
 - Alles mit oereb_stack: `./start-gretl.sh --docker-image sogis/gretl:latest --docker-network oereb_stack_default --job-directory $PWD :oereb_av:replaceCadastralSurveyingData :oereb_plzo:importPLZO :oereb_bundesgesetze:importData :oereb_bundeskonfiguration:importBundeskonfiguration :oereb_kantonskonfiguration:importKantonskonfiguration :oereb_bundesdaten:importData :oereb_kbs:importData`
+
+
+## Beispiel-Requests
+
+### KbS ÖV
+- http://localhost:8080/getegrid/xml/?EN=2689879,1284094
+- http://localhost:8080/extract/xml?EGRID=CH615475087406
+- http://localhost:8080/extract/pdf?EGRID=CH615475087406
+
+### KbS (mgdm2oereb)
+- http://localhost:8080/getegrid/xml/?EN=2689819,1283962
+- http://localhost:8080/extract/xml?EGRID=CH167308546127
+- http://localhost:8080/extract/pdf?EGRID=CH167308546127
